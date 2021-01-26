@@ -47,6 +47,19 @@ Great stuff, you're almost done now. The last bit you need is your `user_id`. In
 
 <img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/user_id.png">
 
+By the end of it, your `config.json` file should look similar to the following:
+
+```json
+{   
+    "auth": {
+        "login_session_men_token": "shT47Gah4bksy1idyyb2y8pwqu752hns6bisa7i",
+        "login_session_men_id": "1234567",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36",
+        "user_id": "12a3b76fe3b7d719d71aeff2"
+    }
+}
+```
+
 That's it. Now to use the script.
 
 ### Usage
