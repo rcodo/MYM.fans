@@ -1,7 +1,11 @@
 # MYM.fans
+![Python-Version](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue)
+
 A program written in Python for downloading pictures/videos from creators on [mym.fans](https://mym.fans/).
 
 Un programme écrit en Python pour télécharger des images/vidéos des créateurs sur [mym.fans](https://mym.fans/)
+
+<img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/example.gif">
 
 ## English
 
