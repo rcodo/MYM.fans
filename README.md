@@ -33,11 +33,15 @@ Go to [mym.fans](https://mym.fans/) and log in. Once your logged in, bring up yo
 
 Once your developer tools are up, click on the `Network` tab and go to your [subscriptions page](https://mym.fans/subscriptions.php). You should see a `file` called subscriptions.php (or close to that effect). Click on that and then scroll down until you see a section called `Request Headers`.
 
+<img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/cookies.png">
+
 Find the row titled `Cookie` and find the values that correspond to `login_session_men_token` and `login_session_men_id`. Copy those values and paste them into their respective locations in the `config.json` file (you can't miss them).
 
 Once those are in there, scroll a little further in the `Request Headers` until you find the row that begins with `User-Agent`. Copy your user agent and paste that into the `config.json` file as well.
 
-Great stuff, you're almost done now. The last bit you need is your `user_id`. In order to get this, go to your [account information page](https://mym.fans/parameters.php?affichage=informations) and scroll down until you see your ID below the green 'Save' button. Copy that and paste it into your `config.json` file. 
+Great stuff, you're almost done now. The last bit you need is your `user_id`. In order to get this, go to your [account information page](https://mym.fans/parameters.php?affichage=informations) and scroll down until you see your ID below the green 'Save' button. Copy that and paste it into your `config.json` file.
+
+<img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/user_id.png">
 
 That's it. Now to use the script.
 
