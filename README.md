@@ -117,7 +117,7 @@ Quand les dépendances sont installées, il faut maintenant trouver quelques inf
 
 Tout d'abord, allez à [mym.fans](https://mym.fans/) et connectez-vous à votre compte. Une fois que vous êtes connecté, ouvrez les outils de développement de votre navigateur. Pour ce faire, consultez cette table:
 
-| Operating System | Keys (for Google Chrome) |
+| Système d'exploitation | Touches (pour Google Chrome) |
 | :----------------: | :----: |
 | macOS | <kbd>alt</kbd> + <kbd>cmd</kbd> + <kbd>i</kbd> |
 | Windows | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> |
