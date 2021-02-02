@@ -94,4 +94,90 @@ $ python mymfans.py -m purehumansoul
 Running that will immediately scrape that user's content. Additionally, if you only wanted their **public-facing** media, you could get it using this script and the above method without entering any cookie information. Though I do recommend at least including a user agent, even if it's not yours.
 
 ## French
-Coming soon
+
+### Installation
+
+Pour utiliser, il faut avoir Python (version 3.6 ou supérieure mais ce programme peut peut-être marcher avec des versions plus inférieures). Il faut aussi installer les dépendances dans le fichier `requirements.txt`. Pour ce faire, effectuer ceci dans votre terminal:
+
+```sh
+$ pip install -r requirements.txt
+```
+
+Pour ceux qui utilisent Linux ou macOS, effectuer ceci plutôt:
+
+```sh
+$ pip3 install -r requirements.txt
+```
+
+Si les deux ne marchent pas, vérifiez que vous êtes dans le même répertoire de travail actuel que le fichier `requirements.txt`.
+
+### Exigences
+
+Quand les dépendances sont installées, il faut maintenant trouver quelques informations sur votre compte MYM.fans.
+
+Tout d'abord, allez à [mym.fans](https://mym.fans/) et connectez-vous à votre compte. Une fois que vous êtes connecté, ouvrez les outils de développement de votre navigateur. Pour ce faire, consultez cette table:
+
+| Operating System | Keys (for Google Chrome) |
+| :----------------: | :----: |
+| macOS | <kbd>alt</kbd> + <kbd>cmd</kbd> + <kbd>i</kbd> |
+| Windows | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> |
+| Linux | <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd> |
+
+Avec vos outils, cliquer sur le tab `Network` and allez à votre [page d'abonnement](https://mym.fans/subscriptions.php). Vous devriez voir un `fichier` qui s'appelle `subscriptions.php` (plus ou moins). Cliquez là-dessus ça et puis faites défiler ver la bas jusqu'à ce que vous voyiez une section qui s'appelle `Request Headers` (ou quelque chose comme ça en français, je sais pas).
+
+<img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/cookies.png">
+
+Vous êtes en cherche d'une ligne que s'appelle `Cookie`. Quand vous la trouvez, mettez les valeurs qui correspondent à `login_session_men_token` et `login_session_men_id` dans le fichier `config.json` qui vient avec ce programme.
+
+Quand vous les avez, faites défiler un peu plus ver le bas (mais toujours dans la section `Request Headers`) et trouvez la ligne qui s'appelle `User-Agent`. Mettez ça dans le `config.json` également.
+
+D'accord, on a presque fini. La dernière information, c'est votre `user_id`. Pour l'avoir, il faut aller à votre [page d'information sur le compte](https://mym.fans/parameters.php?affichage=informations). Faites défiler jusqu'à ce que vous voyiez votre ID à côté d'une bouton verte. Mettez-la dans votre `config.json`.
+
+<img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/user_id.png">
+
+Dans le bout, votre `config.json` devrait ressembler à ceci:
+
+```json
+{   
+    "auth": {
+        "login_session_men_token": "shT47Gah4bksy1idyyb2y8pwqu752hns6bisa7i",
+        "login_session_men_id": "1234567",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36",
+        "user_id": "12a3b76fe3b7d719d71aeff2"
+    }
+}
+```
+
+C'est tout, vous pouvez maintenant l'utiliser.
+
+### Usage
+
+C'est simple. Pour utiliser, effectuer ceci dans votre terminal:
+
+```sh
+$ python mymfans.py
+```
+
+Les utilisateurs de Linux et macOS devraient effectuer:
+
+```
+$ python3 mymfans.py
+```
+
+Lisez les instructions et voilà!
+
+Je dois vous dire que le programme va montrer les créateurs qui sont dans votre liste de favoris. Donc, si vous ne voyez pas quelqu'un sur liste, mettez-les un 'cœur' sur leur page.
+
+Il y a aussi d'autres choses que vous pouvez faire aussi. Si vous voulez télécharger tout le contenu d'une personne en particulier, vous pouvez faire ceci:
+
+```
+$ python mymfans.py --model purehumansoul
+```
+
+*ou*
+
+```sh
+$ python mymfans.py -m purehumansoul
+```
+
+En plus, ce programme peut télécharger le contenu des créateurs à qui vous n'êtes pas inscrit (mais, vous n'allez pas télécharger le contenu 'premium' ou 'privé' bien sûr).
