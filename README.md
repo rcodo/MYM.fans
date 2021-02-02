@@ -168,7 +168,7 @@ Lisez les instructions et voilà!
 
 Je dois vous dire que le programme va montrer les créateurs qui sont dans votre liste de favoris. Donc, si vous ne voyez pas quelqu'un sur liste, mettez-les un 'cœur' sur leur page.
 
-Il y a aussi d'autres choses que vous pouvez faire aussi. Si vous voulez télécharger tout le contenu d'une personne en particulier, vous pouvez faire ceci:
+Il y a aussi d'autres choses que vous pouvez faire. Si vous voulez télécharger tout le contenu d'une personne en particulier, vous pouvez faire ceci:
 
 ```
 $ python mymfans.py --model purehumansoul
