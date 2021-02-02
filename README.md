@@ -7,6 +7,17 @@ Un programme écrit en Python pour télécharger des images/vidéos des créateu
 
 <img src="https://raw.githubusercontent.com/Amenly/MYM.fans/main/media/example.gif">
 
+**MYM.fans**
+
+* [English](#english)
+  * [Installation](#installation)
+  * [Requirements](#requirements)
+  * [Usage](#usage)
+* [Français](#french)
+  * [Installation](#installation-1)
+  * [Exigences](#exigences)
+  * [Usage](#usage-1)
+
 ## English
 
 ### Installation
