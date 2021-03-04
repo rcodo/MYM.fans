@@ -130,7 +130,7 @@ class MYMfans(Logger):
     def get_model_posts(self, array=[], msg_id=None, msg_date=None, count=0):
         if array:
             with requests.Session() as s:
-                r = s.get(POSTS_URL.format(
+                r = s.post(POSTS_URL.format(
                     self.connecte, self.id_, self.model_id, msg_id, msg_date), headers=self.headers)
         else:
             with requests.Session() as s:
