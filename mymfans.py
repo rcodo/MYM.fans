@@ -55,6 +55,7 @@ class MYMfans(Logger):
                  cwd=os.getcwd(),
                  system=platform.system(),
                  model_id=None,
+                 token_infinite=None,
                  media_total=None,
                  actual_total=0,
                  current_total=0):
@@ -75,6 +76,7 @@ class MYMfans(Logger):
         self.system = system
         self.model = args.model
         self.model_id = model_id
+        self.token_infinite = token_infinite
         self.media_total = media_total
         self.actual_total = actual_total
         self.current_total = current_total
@@ -124,6 +126,13 @@ class MYMfans(Logger):
             self.model_id = match.group(1)
             self.logger.debug(
                 'Found model_id' if self.model_id else 'Could not find model_id')
+            portfolio = soup.find('div', {
+                                  'class': 'portfolio-adaptive-full portfolio-adaptive-full-three padding-bottom-20'})
+            pattern = re.compile(r'token_infinite=(\S+)&')
+            match = re.search(pattern, str(portfolio))
+            self.token_infinite = match.group(1)
+            self.logger.debug(
+                'Found token_infinite' if self.token_infinite else 'Could not find token_infinite')
         else:
             r.raise_for_status()
 
@@ -131,7 +140,7 @@ class MYMfans(Logger):
         if array:
             with requests.Session() as s:
                 r = s.post(POSTS_URL.format(
-                    self.connecte, self.id_, self.model_id, msg_id, msg_date), headers=self.headers)
+                    self.connecte, self.id_, self.model_id, self.token_infinite, msg_id, msg_date), headers=self.headers)
         else:
             with requests.Session() as s:
                 r = s.get(MODEL_URL.format(
@@ -164,7 +173,7 @@ class MYMfans(Logger):
     def prepare_download(self, posts):
         if posts:
             self.logger.debug(POSTS_URL.format(
-                self.connecte, self.id_, self.model_id, 0, 0))
+                self.connecte, self.id_, self.model_id, self.token_infinite, 0, 0))
             self.actual_total = len(posts)
             self.logger.info(f'Found {self.actual_total} post of {self.media_total}' if self.actual_total ==
                              1 else f'Found {self.actual_total} posts of {self.media_total}')
